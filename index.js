@@ -10,15 +10,10 @@ import taskRoutes from "./routes/taskRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import { signUp } from "./controllers/userController.js";
 import cloudinary from "./uploadImages.js";
-
-
-
-
 dotenv.config()
 
 const app = express()
-
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 
 
 // Middlewares
