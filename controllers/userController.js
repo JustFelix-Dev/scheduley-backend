@@ -31,7 +31,7 @@ export const logIn = async( req,res,next )=>{
         const token = jwt.sign({id:isUser._id}, process.env.SECRET)
         if(isUser){
           const { password,...userRes} = isUser._doc;
-          return res.status(201).cookie('token',{token},{httpOnly: true}).json({user: userRes,message:'Authentication successful!' })
+          return res.status(201).cookie('token',{token},{ secure:true,sameSite:'none',domain:'.felixdev.com.ng'}).json({user: userRes,message:'Authentication successful!' })
         }
 
     }
